@@ -1,3 +1,5 @@
+const dotenv =require("dotenv") 
+dotenv.config();
 const express = require("express");
 const mongoose = require("mongoose");
 const { MONGO_URL } = require("./utils/getEnv");
@@ -22,7 +24,7 @@ mongoose.connection.on("error",(error) => {
 });
 
 mongoose
-  .connect(MONGO_URL)
+  .connect(process.env.MONGO_URL)
   .then(() => {
    
 
