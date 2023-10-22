@@ -1,5 +1,5 @@
-import { model, Schema } from "mongoose";
-const interestsSchema = new Schema({
+import { model, Schema,InferSchemaType } from "mongoose";
+export const interestsSchema = new Schema({
   techClubs: {
     type: [String],
   },
@@ -68,3 +68,9 @@ const userSchema = new Schema({
     type: String,
   },
 });
+
+
+export const userDetails = model(
+    "userDetails",
+    userSchema
+);

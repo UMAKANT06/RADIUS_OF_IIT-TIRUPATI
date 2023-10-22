@@ -1,15 +1,32 @@
-import express from "express"
-import mongoose from mongoose
-import {mongodburl} from "./connect.js"
-const app=express();
-mongoose.connect(mongodburl)
-.then(()=>{
-    console.log("connected to database");
-    app.listen(3000,()=>{
-        console.log("server is running on port 3000")
-    })
+const express = require("express");
+const mongoose = require("mongoose");
+const { MONGO_URL } = require("./utils/getEnv");
+const app = express();
 
-})
-.catch((error)=>{
-    console.log("error")
-})
+// Mongoose setup
+mongoose.connection.on("connecting", () => {
+  console.log("Connecting to database...");
+});
+
+mongoose.connection.on("connected", () => {
+  console.log("Connected to database...");
+});
+
+mongoose.connection.on("disconnected", () => {
+  console.log("Disconnected from database...");
+});
+
+mongoose.connection.on("error",(error) => {
+  console.log(error);
+});
+
+mongoose
+  .connect(MONGO_URL)
+  .then(() => {
+   
+
+    app.listen(3000, () => {
+      console.log("Server running on port: 6001");
+    });
+  })
+  .catch((error) => console.log(`Did not connect : ${error}`));
