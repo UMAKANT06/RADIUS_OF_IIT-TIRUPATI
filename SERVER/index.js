@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const { MONGO_URL } = require("./utils/getEnv");
+const {PORT}=require("./utils/getEnv");
 const app = express();
 
 // Mongoose setup
@@ -26,7 +27,7 @@ mongoose
    
 
     app.listen(3000, () => {
-      console.log("Server running on port: 6001");
+      console.log(`Server running on port:3000`);
     });
   })
   .catch((error) => console.log(`Did not connect : ${error}`));
