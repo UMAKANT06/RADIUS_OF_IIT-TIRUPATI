@@ -1,0 +1,52 @@
+/* ComplaintForm.css */
+
+.complaint-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #3498db; /* Solid border color */
+    border-radius: 15px; /* Border radius */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #f0f8ff; /* Bright background color */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 12px;
+    border: 2px solid #3498db; /* Solid border for input, textarea, and select */
+    border-radius: 8px;
+    background-color: #ffffff; /* Bright white background color */
+  }
+  
+  button {
+    padding: 14px 24px;
+    background-color: #ff6347; /* Bright red background color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #ff4838; /* Slightly darker red on hover */
+  }
+  
+  .error {
+    color: red; /* Red color for error messages */
+    font-size: 14px;
+    margin-top: 5px;
+  }
