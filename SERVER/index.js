@@ -1,6 +1,9 @@
+const dotenv =require("dotenv") 
+dotenv.config();
 const express = require("express");
 const mongoose = require("mongoose");
 const { MONGO_URL } = require("./utils/getEnv");
+const {PORT}=require("./utils/getEnv");
 const app = express();
 
 // Mongoose setup
@@ -21,12 +24,12 @@ mongoose.connection.on("error",(error) => {
 });
 
 mongoose
-  .connect(MONGO_URL)
+  .connect(process.env.MONGO_URL)
   .then(() => {
    
 
     app.listen(3000, () => {
-      console.log("Server running on port: 6001");
+      console.log(`Server running on port:3000`);
     });
   })
   .catch((error) => console.log(`Did not connect : ${error}`));
