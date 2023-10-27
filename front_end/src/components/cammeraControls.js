@@ -1,21 +1,17 @@
-import * as THREE from "three";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import React, { Suspense, useMemo, useState, useEffect ,useRef} from 'react';
-import ReactDOM from 'react-dom';
-import { CubeTextureLoader } from 'three';
 import { Canvas, useThree, useFrame, useLoader,extend } from '@react-three/fiber';
-import { OrbitControls, Environment ,PerspectiveCamera,PointerLockControls} from '@react-three/drei';
-import { createRoot } from 'react-dom';
-import { usePlane, Physics, useSphere } from '@react-three/cannon';
-import { Vector3, Quaternion, Euler ,MathUtils} from 'three';
+import { Vector3, Quaternion} from 'three';
+import {RigidBody, CuboidCollider,vec3,quat,euler} from '@react-three/rapier'
 
 function Animate() {
   const forward = new Vector3(0, 0, -1);
   const right = new Vector3(1, 0, 0);
-  const moveSpeed = 0.5;
+  const moveSpeed = 0.1;
   const mouseSensitivity = 0.01;
 
   const { camera } = useThree();
+  const rigidBodyRef=useRef(null);
+  const rigidBodyVel=useRef(null);
 
   const moveDirection = useRef(new Vector3(0, 0, 0));
   const pitch = useRef(0);
@@ -35,6 +31,19 @@ function Animate() {
     camera.setRotationFromQuaternion(quaternion);
 
     camera.position.add(moveDirection.current);
+    
+    if (rigidBodyRef.current) {
+      const position = vec3(camera.position);
+      rigidBodyRef.current.setTranslation(position, true);
+    }
+    if(rigidBodyVel.current)
+    {
+      const velocity = new Vector3(moveDirection.current.x, 0, moveDirection.current.z);
+    rigidBodyRef.current.setLinvel(velocity);
+
+    }
+    
+
   });
 
   const handleKeyDown = (event) => {
@@ -58,6 +67,7 @@ function Animate() {
     }
 
     moveDirection.current = move;
+
   };
 
   const handleKeyUp = (event) => {
@@ -92,6 +102,7 @@ function Animate() {
     right.normalize();
   };
 
+ 
   // Add event listeners
   React.useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
@@ -105,7 +116,17 @@ function Animate() {
     };
   }, []);
 
-  return null;
+  return (
+    <group>
+  <RigidBody position={[10, 0, 34]} ref={rigidBodyRef}  enabledRotations={[false, false, false]} setLinvel={rigidBodyVel} >
+    <CuboidCollider args={[1, 1, 1]} >
+      <group>
+        <primitive object={camera}   />
+      </group>
+    </CuboidCollider>
+  </RigidBody>
+</group>
+  );
 }
 
 export {Animate};

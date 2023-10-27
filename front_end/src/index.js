@@ -4,12 +4,13 @@ import React, { Suspense, useMemo, useState, useEffect ,useRef} from 'react';
 import ReactDOM from 'react-dom';
 import { CubeTextureLoader } from 'three';
 import { Canvas, useThree, useFrame, useLoader,extend } from '@react-three/fiber';
-import { OrbitControls, Environment ,PerspectiveCamera,PointerLockControls} from '@react-three/drei';
+import { OrbitControls, Environment ,PerspectiveCamera,PointerLockControls,Box} from '@react-three/drei';
 import { createRoot } from 'react-dom';
 import { usePlane, Physics, useSphere } from '@react-three/cannon';
 import { Vector3, Quaternion, Euler ,MathUtils} from 'three';
 import { Animate } from "./components/cammeraControls";
-
+import { Experince } from "./components/experince";
+import {RigidBody} from '@react-three/rapier'
 function Skybox() {
   const { scene } = useThree();
   const loader = new CubeTextureLoader();
@@ -65,11 +66,11 @@ function App() {
       <pointLight position={[10, 0, 10]} />
 
       <OrbitControls enableZoom={false}  />
-      <Animate/>
+      <Experince/>
       <Physics>
-        <ModelViewer modelPath="/assets/HOSTELS_FINAL.glb" position={[-21, -1, -153]} />
+        
         <Skybox />
-        <Ground position={[-21,-0.8,-153]} />
+        
         <Environment preset="sunset" />
       </Physics>
     </Canvas>
