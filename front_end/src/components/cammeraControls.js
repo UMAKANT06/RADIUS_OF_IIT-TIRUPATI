@@ -1,7 +1,11 @@
-import React, { Suspense, useMemo, useState, useEffect ,useRef} from 'react';
-import { Canvas, useThree, useFrame, useLoader,extend } from '@react-three/fiber';
+import React, {useRef,useState} from 'react';
+import {  useThree, useFrame} from '@react-three/fiber';
 import { Vector3, Quaternion} from 'three';
-import {RigidBody, CuboidCollider,vec3,quat,euler} from '@react-three/rapier'
+import {RigidBody, CuboidCollider} from '@react-three/rapier';
+import * as THREE from 'three';
+// import { R3RapierBranding } from "r3-rapier-branding";
+
+
 
 function Animate() {
   const forward = new Vector3(0, 0, -1);
@@ -10,15 +14,18 @@ function Animate() {
   const mouseSensitivity = 0.01;
 
   const { camera } = useThree();
-  const rigidBodyRef=useRef(null);
-  const rigidBodyVel=useRef(null);
-
   const moveDirection = useRef(new Vector3(0, 0, 0));
   const pitch = useRef(0);
   const yaw = useRef(0);
   const isMouseMoving = useRef(false);
+  const rigidBodyVector = new THREE.Vector3(0, 0, 0);
+  const rigidBodyRef=useRef();
 
-  useFrame(() => {
+  const [colliderPosition, setColliderPosition] = useState([10, 0, 34]);
+
+  
+
+  useFrame((state) => {
     camera.rotation.x = pitch.current;
     camera.rotation.y = yaw.current;
 
@@ -26,25 +33,23 @@ function Animate() {
     quaternion.setFromAxisAngle(right, pitch.current);
     quaternion.multiply(
       new Quaternion().setFromAxisAngle(new Vector3(0, 1, 0), yaw.current)
-    );
+    )
 
-    camera.setRotationFromQuaternion(quaternion);
+    camera.setRotationFromQuaternion(quaternion)
 
     camera.position.add(moveDirection.current);
-    
-    if (rigidBodyRef.current) {
-      const position = vec3(camera.position);
-      rigidBodyRef.current.setTranslation(position, true);
-    }
-    if(rigidBodyVel.current)
-    {
-      const velocity = new Vector3(moveDirection.current.x, 0, moveDirection.current.z);
-    rigidBodyRef.current.setLinvel(velocity);
-
-    }
-    
+    setColliderPosition([camera.position.x*30, camera.position.y, camera.position.z*10]);
+    console.log("Camera Position:", camera.position.x,camera.position.y,camera.position.z);
+  //   rigidBodyVector.copy(camera.position);
+  //   rigidBodyRef.current=rigidBodyVector;
+  
+  //  console.log("rigidBody Position",rigidBodyRef.current.x,rigidBodyRef.current.y,rigidBodyRef.current.z,);
+   console.log("collider position" ,colliderPosition);
 
   });
+
+
+
 
   const handleKeyDown = (event) => {
     const move = new Vector3();
@@ -118,11 +123,13 @@ function Animate() {
 
   return (
     <group>
-  <RigidBody position={[10, 0, 34]} ref={rigidBodyRef}  enabledRotations={[false, false, false]} setLinvel={rigidBodyVel} >
-    <CuboidCollider args={[1, 1, 1]} >
+  <RigidBody position={[10,0,34]}   shape= 'ball' ref={colliderPosition}  enabledRotations={[false, false, false]}type='dynamic'>
+    <CuboidCollider args={[1, 1, 1]} position={colliderPosition} ref={colliderPosition} moveSpeed={1}>
       <group>
         <primitive object={camera}   />
+
       </group>
+      
     </CuboidCollider>
   </RigidBody>
 </group>
