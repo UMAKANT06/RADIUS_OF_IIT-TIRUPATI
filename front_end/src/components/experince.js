@@ -1,13 +1,10 @@
-import { Physics,RigidBody,ConvexHullCollider, CuboidCollider,TrimeshCollider } from "@react-three/rapier";
-import * as THREE from "three";
+import { Physics,RigidBody, CuboidCollider} from "@react-three/rapier";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import React, { Suspense, useMemo, useState, useEffect ,useRef} from 'react';
-import ReactDOM from 'react-dom';
-import { CubeTextureLoader } from 'three';
-import { Canvas, useThree, useFrame, useLoader,extend } from '@react-three/fiber';
-import { OrbitControls, Environment ,PerspectiveCamera,PointerLockControls,Box} from '@react-three/drei';
-import { createRoot } from 'react-dom';
-import { Vector3, Quaternion, Euler ,MathUtils} from 'three';
+import React from 'react';
+import { useLoader } from '@react-three/fiber';
+import {Box,KeyboardControls} from '@react-three/drei';
+
+
 import { Animate } from "./cammeraControls";
 
 const ModelViewer = ({ modelPath, position }) => {
@@ -17,7 +14,15 @@ const ModelViewer = ({ modelPath, position }) => {
 
 function Experince(){
     return(
-        <Physics debug="true">
+        <KeyboardControls
+        map={[
+          { name: "forward", keys: ["ArrowUp", "w", "W"] },
+          { name: "backward", keys: ["ArrowDown", "s", "S"] },
+          { name: "left", keys: ["ArrowLeft", "a", "A"] },
+          { name: "right", keys: ["ArrowRight", "d", "D"] },
+          // { name: "jump", keys: ["Space"] },
+        ]}>
+        <Physics debug ="true" gravity={[0, -30, 0]}>
             <RigidBody type={"fixed"} >
                 <CuboidCollider args={[1,2,3]}>
                 <ModelViewer modelPath="/assets/HOSTELS_FINAL.glb" position={[-21, -1, -153]} />
@@ -30,6 +35,7 @@ function Experince(){
         </RigidBody>
         <Animate/>
         </Physics>
+        </KeyboardControls>
     )
 }
 
