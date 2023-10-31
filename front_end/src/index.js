@@ -2,7 +2,7 @@ import * as THREE from "three";
 import React from 'react';
 import { CubeTextureLoader } from 'three';
 import { Canvas, useThree } from '@react-three/fiber';
-import { OrbitControls, Environment} from '@react-three/drei';
+import { OrbitControls, Environment,KeyboardControls,PointerLockControls} from '@react-three/drei';
 import { createRoot } from 'react-dom';
 import { Physics} from '@react-three/cannon';
 import { Vector3} from 'three';
@@ -32,20 +32,13 @@ const camera = new THREE.PerspectiveCamera(
   500
 );
 
-// Set the initial camera position
 camera.position.set(20, -908, 10);
-//models
-//ground
-
-
-
-
-
 
 function App() {
   const newCameraPosition = new Vector3(-21, -108, -153);
 
   return (
+    
     <Canvas
       style={{ position: 'fixed', top: 0, right: 0, bottom: 0, left: 0 }}
     >
@@ -60,7 +53,9 @@ function App() {
         
         <Environment preset="sunset" />
       </Physics>
+      <PointerLockControls/>
     </Canvas>
+
   );
 }
 
