@@ -23,17 +23,22 @@ function Experince(){
           // { name: "jump", keys: ["Space"] },
         ]}>
         <Physics debug ="true" gravity={[0, -30, 0]}>
-            <RigidBody type={"fixed"} >
+           
+            <RigidBody  type={"fixed"}   colliders="cuboid">
                 <CuboidCollider args={[1,2,3]}>
                 <ModelViewer modelPath="/assets/HOSTELS_FINAL.glb" position={[-21, -1, -153]} />
                 </CuboidCollider>
+                
+               
             </RigidBody>
+            <Animate/>
             <RigidBody type={"fixed"}>
-        <Box position={[-21,-2.5,-153]} args={[500,500]} rotation={[-Math.PI / 2, 0, 0]}>
-        <meshStandardMaterial color={"springgreen"}/>
-        </Box>
-        </RigidBody>
-        <Animate/>
+                <Box position={[-21,-2.5,-153]} args={[500,500]} rotation={[-Math.PI / 2, 0, 0]}>
+                <meshStandardMaterial color={"springgreen"}/>
+                </Box>
+            </RigidBody>
+        
+        
         </Physics>
         </KeyboardControls>
     )
