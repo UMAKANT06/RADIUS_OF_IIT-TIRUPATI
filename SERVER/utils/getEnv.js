@@ -1,4 +1,4 @@
-const dotenv =require("dotenv") 
+const dotenv = require("dotenv") 
 dotenv.config();
 const MONGO_URL=process.env.MONGO_URL??""
 const PORT=process.env.PORT??3000

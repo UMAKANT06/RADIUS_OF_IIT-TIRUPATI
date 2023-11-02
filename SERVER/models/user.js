@@ -1,5 +1,6 @@
-import { model, Schema,InferSchemaType } from "mongoose";
-export const interestsSchema = new Schema({
+const { model, Schema,InferSchemaType } = require("mongoose");
+
+const interestsSchema = new Schema({
   techClubs: {
     type: [String],
   },
@@ -17,32 +18,38 @@ export const interestsSchema = new Schema({
 const userSchema = new Schema({
   rollNumber: {
     type: String,
-    required: true,
+    required: [true, "Roll number is requierd"],
     unique: true,
     minlength: 8,
     maxlength: 8,
   },
   name: {
     type: String,
-    required: true,
+    required: [true, "Name is required"],
     minlength: 3,
     maxlength: 50,
   },
+  password: {
+    type: String,
+    required: [true, "Password is required"],
+    minlength: 8,
+    maxlength: 200,
+  },
   location: {
     type: String,
-    required: true,
+    required: [true, 'Location is required'],
     unique: false,
     minlength: 2,
     maxlength: 100,
   },
   phoneNumber: {
     type: Number,
-    required: true,
+    required: [true, 'Phone number is required'],
     unique: true,
   },
   interest: {
     type: [interestsSchema],
-    required: true,
+    required: [true, 'Interest is required'],
   },
   rewards: {
     type: String,
@@ -58,7 +65,7 @@ const userSchema = new Schema({
   },
   roomNumber: {
     type: Number,
-    required: true,
+    required: [true, 'Room number is required'],
     unique: true,
   },
   ratings: {
@@ -70,7 +77,7 @@ const userSchema = new Schema({
 });
 
 
-export const userDetails = model(
-    "userDetails",
+module.exports = model(
+    'User',
     userSchema
 );
