@@ -1,17 +1,14 @@
 import * as THREE from "three";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import React, { Suspense, useMemo, useState, useEffect ,useRef} from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import { CubeTextureLoader } from 'three';
-import { Canvas, useThree, useFrame, useLoader,extend } from '@react-three/fiber';
-import { OrbitControls, Environment ,PerspectiveCamera,PointerLockControls,Box} from '@react-three/drei';
+import { Canvas, useThree } from '@react-three/fiber';
+import { OrbitControls, Environment,KeyboardControls,PointerLockControls} from '@react-three/drei';
 import { createRoot } from 'react-dom';
-import { usePlane, Physics, useSphere } from '@react-three/cannon';
-import { Vector3, Quaternion, Euler ,MathUtils} from 'three';
+import { Physics} from '@react-three/cannon';
+import { Vector3} from 'three';
 import { Animate } from "./components/cammeraControls";
 import { Experince } from "./components/experince";
 import {RigidBody} from '@react-three/rapier'
-import Search from "./components/SearchBar/SearchScreen";
 function Skybox() {
   const { scene } = useThree();
   const loader = new CubeTextureLoader();
@@ -35,7 +32,6 @@ const camera = new THREE.PerspectiveCamera(
   500
 );
 
-// Set the initial camera position
 camera.position.set(20, -908, 10);
 //models
 const ModelViewer = ({ modelPath, position }) => {
@@ -54,9 +50,12 @@ const Ground = () => {
   );
 };
 
-function All_Main() {
-  //use for animation
-  return(
+
+
+
+function App() {
+  const newCameraPosition = new Vector3(-21, -108, -153);
+  return (
     <Canvas
       style={{ position: 'fixed', top: 0, right: 0, bottom: 0, left: 0 }}
     >
@@ -70,15 +69,8 @@ function All_Main() {
         
         <Environment preset="sunset" />
       </Physics>
+      <PointerLockControls/>
     </Canvas>
-  )
-}
-
-
-function App() {
-  const newCameraPosition = new Vector3(-21, -108, -153);
-  return (
-    <Search/>
   );
 }
 
