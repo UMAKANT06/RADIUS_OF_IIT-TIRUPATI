@@ -32,16 +32,6 @@ function Animate() {
 
     camera.position.add(moveDirection.current);
     
-    if (rigidBodyRef.current) {
-      const position = vec3(camera.position);
-      rigidBodyRef.current.setTranslation(position, true);
-    }
-    if(rigidBodyVel.current)
-    {
-      const velocity = new Vector3(moveDirection.current.x, 0, moveDirection.current.z);
-    rigidBodyRef.current.setLinvel(velocity);
-
-    }
     
 
   });
@@ -118,7 +108,7 @@ function Animate() {
 
   return (
     <group>
-  <RigidBody position={[10, 0, 34]} ref={rigidBodyRef}  enabledRotations={[false, false, false]} setLinvel={rigidBodyVel} >
+  <RigidBody position={[10, 0, 34]}  enabledRotations={[false, false, false]} type ='fixed' >
     <CuboidCollider args={[1, 1, 1]} >
       <group>
         <primitive object={camera}   />

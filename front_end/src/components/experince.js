@@ -17,7 +17,7 @@ const ModelViewer = ({ modelPath, position }) => {
 
 function Experince(){
     return(
-        <Physics debug="true">
+        <Physics >
             <RigidBody type={"fixed"} >
                 <CuboidCollider args={[1,2,3]}>
                 <ModelViewer modelPath="/assets/HOSTELS_FINAL.glb" position={[-21, -1, -153]} />
