@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@dimforge/rapier3d-compat": "^0.11.2",
+    "@pmndrs/branding": "^0.0.8",
     "@react-three/cannon": "^6.6.0",
     "@react-three/drei": "^9.88.5",
     "@react-three/fiber": "^8.15.4",
