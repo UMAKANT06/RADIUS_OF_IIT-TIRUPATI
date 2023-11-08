@@ -12,29 +12,21 @@ const sideVector = new THREE.Vector3()
 const rotation = new THREE.Vector3()
 
 export function Player({ lerp = THREE.MathUtils.lerp }) {
-  // const axe = useRef()
   const ref = useRef()
   const rapier = useRapier()
   const [, get] = useKeyboardControls()
+  const force = [0, 0, -10]
+
   useFrame((state) => {
     const { forward, backward, left, right, jump } = get()
     const velocity = ref.current.linvel()
-    // update camera
-    state.camera.position.set(...ref.current.translation())
-    // update axe
-    // axe.current.children[0].rotation.x = lerp(axe.current.children[0].rotation.x, Math.sin((velocity.length() > 1) * state.clock.elapsedTime * 10) / 6, 0.1)
-    // axe.current.rotation.copy(state.camera.rotation)
-    // axe.current.position.copy(state.camera.position).add(state.camera.getWorldDirection(rotation).multiplyScalar(1))
-    // movement
+    
+    state.camera.position.copy(ref.current.translation())
+  
     frontVector.set(0, 0, backward - forward)
     sideVector.set(left - right, 0, 0)
     direction.subVectors(frontVector, sideVector).normalize().multiplyScalar(SPEED).applyEuler(state.camera.rotation)
     ref.current.setLinvel({ x: direction.x, y: velocity.y, z: direction.z })
-    // jumping
-    // const world = rapier.world.raw()
-    // const ray = world.castRay(new RAPIER.Ray(ref.current.translation(), { x: 0, y: -1, z: 0 }))
-    // const grounded = ray && ray.collider && Math.abs(ray.toi) <= 1.75
-    // if (jump && grounded) ref.current.setLinvel({ x: 0, y: 7.5, z: 0 })
   })
   return (
     <>
