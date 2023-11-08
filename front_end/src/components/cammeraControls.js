@@ -41,26 +41,59 @@ const isMouseMoving = useRef(false);
 
     state.camera.setRotationFromQuaternion(quaternion);
 
-    state.camera.position.add(moveDirection);
+    camera.position.add(moveDirection.current);
+    
+    if (rigidBodyRef.current) {
+      const position = vec3(camera.position);
+      rigidBodyRef.current.setTranslation(position, true);
+    }
+    if(rigidBodyVel.current)
+    {
+      const velocity = new Vector3(moveDirection.current.x, 0, moveDirection.current.z);
+    rigidBodyRef.current.setLinvel(velocity);
 
+    }
     
 
-    state.camera.position.copy(ref.current.translation());
-
-    const { forward, backward, left, right } = get();
-
-    frontVector.set(0, 0, backward - forward)
-    sideVector.set(left - right, 0, 0)
-
-
-
-    moveDirection.subVectors(frontVector, sideVector).normalize().multiplyScalar(moveSpeed).applyEuler(state.camera.rotation)
-    ref.current.setLinvel({ x: moveDirection.x, y: velocity.y, z: moveDirection.z })
-
-
-    
   });
-  //mouse movement
+
+  const handleKeyDown = (event) => {
+    const move = new Vector3();
+
+    switch (event.code) {
+      case "KeyW":
+        move.copy(forward).multiplyScalar(moveSpeed);
+        break;
+      case "KeyS":
+        move.copy(forward).multiplyScalar(-moveSpeed); // Move backward
+        break;
+      case "KeyA":
+        move.copy(right).multiplyScalar(-moveSpeed); // Move left
+        break;
+      case "KeyD":
+        move.copy(right).multiplyScalar(moveSpeed); // Move right
+        break;
+      default:
+        break;
+    }
+
+    moveDirection.current = move;
+
+  };
+
+  const handleKeyUp = (event) => {
+    switch (event.code) {
+      case "KeyW":
+      case "KeyS":
+      case "KeyA":
+      case "KeyD":
+        moveDirection.current = new Vector3(0, 0, 0); // Stop moving
+        break;
+      default:
+        break;
+    }
+  };
+
   const handleMouseMove = (event) => {
     const deltaX = event.movementX || event.mozMovementX || 0;
     const deltaY = event.movementY || event.mozMovementY || 0;
@@ -84,19 +117,15 @@ const isMouseMoving = useRef(false);
   }, []);
 
   return (
-   
-    <RigidBody
-      ref={ref}
-      colliders={false}
-      mass={1}
-      type="dynamic"
-      position={[0, 11, 4]}
-      enabledRotations={[false, false, false]}
-    >
-      <CapsuleCollider args={[1, 0.5]}/>
-    
-    </RigidBody>
-  
+    <group>
+  <RigidBody position={[10, 0, 34]} ref={rigidBodyRef}  enabledRotations={[false, false, false]} setLinvel={rigidBodyVel} >
+    <CuboidCollider args={[1, 1, 1]} >
+      <group>
+        <primitive object={camera}   />
+      </group>
+    </CuboidCollider>
+  </RigidBody>
+</group>
   );
 }
 

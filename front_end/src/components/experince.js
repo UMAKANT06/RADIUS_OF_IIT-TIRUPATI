@@ -14,17 +14,8 @@ const ModelViewer = ({ modelPath, position }) => {
 
 function Experince(){
     return(
-        <KeyboardControls
-        map={[
-          { name: "forward", keys: ["ArrowUp", "w", "W"] },
-          { name: "backward", keys: ["ArrowDown", "s", "S"] },
-          { name: "left", keys: ["ArrowLeft", "a", "A"] },
-          { name: "right", keys: ["ArrowRight", "d", "D"] },
-          // { name: "jump", keys: ["Space"] },
-        ]}>
-        <Physics debug ="true" gravity={[0, -30, 0]}>
-           
-            <RigidBody  type={"fixed"}   colliders="cuboid">
+        <Physics debug="true">
+            <RigidBody type={"fixed"} >
                 <CuboidCollider args={[1,2,3]}>
                 <ModelViewer modelPath="/assets/HOSTELS_FINAL.glb" position={[-21, -1, -153]} />
                 </CuboidCollider>
