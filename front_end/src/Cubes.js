@@ -1,8 +1,10 @@
-import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import React, { useRef } from "react";
+import { CuboidCollider, RigidBody } from "@react-three/rapier"
 
-export function Model(props) {
-  const { nodes, materials } = useGLTF("/HOSTELS_FINAL.glb");
+
+export function Cubes(props) {
+  const { nodes, materials,position } = useGLTF("/assets/HOSTELS_FINAL.glb");
   return (
     <group {...props} dispose={null}>
       <group position={[-30.322, 0, 94.043]} scale={[4, 1, 6.5]}>
@@ -11,7 +13,10 @@ export function Model(props) {
           receiveShadow
           geometry={nodes.Plane009.geometry}
           material={materials["Material.187"]}
-        />
+        >
+          <CuboidCollider args={[nodes.Plane009.geometry]} position={[21, 10, 153]}/>
+        </mesh>
+
         <mesh
           castShadow
           receiveShadow

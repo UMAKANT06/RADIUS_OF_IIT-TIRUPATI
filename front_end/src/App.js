@@ -4,7 +4,7 @@ import { Ground } from "./Ground"
 import { CubeTextureLoader } from 'three';
 import { Canvas, useThree } from '@react-three/fiber';
 import { Player } from "./Player"
-import { Models } from "./Models";
+import { Cubes } from "./Cubes";
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
 
 function Skybox() {
@@ -49,15 +49,12 @@ export default function App() {
         { name: "right", keys: ["ArrowRight", "d", "D"] },
         { name: "jump", keys: ["Space"] },
       ]}>
-      <Canvas shadows camera={{ fov: 45 }}>
+      <Canvas >
         <Sky sunPosition={[100, 20, 100]} />
-        <ambientLight intensity={0.3} />
-        <pointLight castShadow intensity={0.8} position={[100, 100, 100]} />
         <Physics debug ="true" gravity={[0, -10, 0]}>
           <Ground />
           <Player />
-          <Box/>
-          {/* <Models/> */}
+          <Cubes/>
           <Skybox/>
           <Environment preset="sunset" />
         </Physics>
