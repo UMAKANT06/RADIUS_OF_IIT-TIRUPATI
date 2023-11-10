@@ -5,7 +5,6 @@ import { CubeTextureLoader } from 'three';
 import { Canvas, useThree } from '@react-three/fiber';
 import { Player } from "./Player"
 import { Cubes } from "./Cubes";
-import { Cubes } from "./Cubes";
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
 import { Models } from "./Models";
 function Skybox() {
@@ -52,13 +51,12 @@ export default function App() {
         { name: "left", keys: ["ArrowLeft", "a", "A"] },
         { name: "right", keys: ["ArrowRight", "d", "D"] },
         { name: "jump", keys: ["Space"] },
-        { name: "fastSpeed", keys: ["Shift"]}
       ]}>
       <Canvas >
-      <Canvas >
+      
         <Sky sunPosition={[100, 20, 100]} />
 
-        <Physics  debug="true " gravity={[0, -10, 0]}  >
+        <Physics  debug="true "  gravity={[0, -10, 0]} >
           <Ground />
           <Player />
           <Cubes/>
@@ -73,5 +71,6 @@ export default function App() {
         <PointerLockControls />
       </Canvas>
     </KeyboardControls>
-  )
+  
+  );
 }
