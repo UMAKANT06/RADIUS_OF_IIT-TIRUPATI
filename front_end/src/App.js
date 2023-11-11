@@ -6,7 +6,16 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { Player } from "./Player"
 import { Cubes } from "./Cubes";
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
-import { Models } from "./Models";
+import { Hostel_H } from "./Hostel_H";
+import { Roads } from "./Roads";
+import { Front_tree_one } from "./Trees_hostel_front1";
+import { Front_tree_two } from "./Trees_hostel_front2";
+import { TreesBetween1 } from "./TreesBetween1";
+import { TreesBetween2 } from "./TreesBetween2";
+import { Achivements } from "./Achivements";
+import { Grass } from "./Grass1";
+import { Pond } from "./Pond";
+
 function Skybox() {
   const { scene } = useThree();
   const loader = new CubeTextureLoader();
@@ -52,14 +61,27 @@ export default function App() {
         { name: "right", keys: ["ArrowRight", "d", "D"] },
         { name: "jump", keys: ["Space"] },
       ]}>
-      <Canvas >
+      <Canvas shadowMap >
+
+      <ambientLight intensity={0.5} />
+
+
       
         <Sky sunPosition={[100, 20, 100]} />
 
         <Physics  debug="true "  gravity={[0, -10, 0]} >
           <Ground />
           <Player />
+          <Roads/>
+          {/* <Achivements/> */}
+          <Front_tree_one/>
+          <Front_tree_two/>
+          <TreesBetween1/>
+          {/* <Pond/> */}
+          {/* <TreesBetween2/> */}
+          <Hostel_H/>
           <Cubes/>
+          {/* <Grass/> */}
           {/* <Model  modelPath={modelPath}  /> */}
           {/* <Models/> */}
           <RigidBody>

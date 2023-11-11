@@ -5,7 +5,7 @@ import { useFrame } from "@react-three/fiber"
 import { useKeyboardControls } from "@react-three/drei"
 import { BallCollider, CapsuleCollider, CuboidCollider, RigidBody, useRapier } from "@react-three/rapier"
 
-let SPEED = 20
+let SPEED = 50
 const direction = new THREE.Vector3()
 const frontVector = new THREE.Vector3()
 const sideVector = new THREE.Vector3()
@@ -39,7 +39,7 @@ export function Player({ lerp = THREE.MathUtils.lerp }) {
   return (
     <>
             <RigidBody ref={ref} colliders={false} mass={1} type="dynamic" position={[0, 10, 0]} enabledRotations={[false, false, false]}>
-        <CapsuleCollider args={[0.2, 0.2]} friction={[-0.3]} />
+        <CapsuleCollider args={[1.2, 1.2]} friction={[-0.3]} />
       </RigidBody>
 
     </>
