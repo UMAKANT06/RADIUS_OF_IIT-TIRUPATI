@@ -12,9 +12,8 @@ import { Front_tree_one } from "./Trees_hostel_front1";
 import { Front_tree_two } from "./Trees_hostel_front2";
 import { TreesBetween1 } from "./TreesBetween1";
 import { TreesBetween2 } from "./TreesBetween2";
-import { Achivements } from "./Achivements";
-import { Grass } from "./Grass1";
-import { Pond } from "./Pond";
+import { FrontRoads } from "./FrontRoads";
+import { Security } from "./Security";
 
 function Skybox() {
   const { scene } = useThree();
@@ -71,12 +70,15 @@ export default function App() {
 
         <Physics  debug="true "  gravity={[0, -10, 0]} >
           <Ground />
+          <Security/>
           <Player />
+          <FrontRoads/>
           <Roads/>
           {/* <Achivements/> */}
           <Front_tree_one/>
           <Front_tree_two/>
           <TreesBetween1/>
+    
           {/* <Pond/> */}
           {/* <TreesBetween2/> */}
           <Hostel_H/>
