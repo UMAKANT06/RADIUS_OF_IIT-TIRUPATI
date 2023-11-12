@@ -14,6 +14,7 @@ import { TreesBetween1 } from "./TreesBetween1";
 import { TreesBetween2 } from "./TreesBetween2";
 import { FrontRoads } from "./FrontRoads";
 import { Security } from "./Security";
+import { GrassBoundary } from "./GrassBoundary";
 
 function Skybox() {
   const { scene } = useThree();
@@ -70,6 +71,7 @@ export default function App() {
 
         <Physics  debug="true "  gravity={[0, -10, 0]} >
           <Ground />
+          <GrassBoundary/>
           <Security/>
           <Player />
           <FrontRoads/>
@@ -80,7 +82,7 @@ export default function App() {
           <TreesBetween1/>
     
           {/* <Pond/> */}
-          {/* <TreesBetween2/> */}
+          <TreesBetween2/>
           <Hostel_H/>
           <Cubes/>
           {/* <Grass/> */}
