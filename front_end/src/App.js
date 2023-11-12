@@ -15,6 +15,7 @@ import { TreesBetween2 } from "./TreesBetween2";
 import { FrontRoads } from "./FrontRoads";
 import { Security } from "./Security";
 import { GrassBoundary } from "./GrassBoundary";
+// import { Pond } from "./Pond";
 
 function Skybox() {
   const { scene } = useThree();
