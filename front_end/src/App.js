@@ -3,7 +3,7 @@ import { Physics } from "@react-three/rapier"
 import { Ground } from "./Ground"
 import { CubeTextureLoader } from 'three';
 import { Canvas, useThree } from '@react-three/fiber';
-import { Player } from "./Player"
+import { Player ,Box } from "./Player"
 import { Cubes } from "./Cubes";
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
 import { Hostel_H } from "./Hostel_H";
@@ -15,6 +15,7 @@ import { TreesBetween2 } from "./TreesBetween2";
 import { FrontRoads } from "./FrontRoads";
 import { Security } from "./Security";
 import { GrassBoundary } from "./GrassBoundary";
+import { Rocks, SimpleMountain, Clouds } from "./Mountains";
 // import { Pond } from "./Pond";
 
 function Skybox() {
@@ -31,25 +32,6 @@ function Skybox() {
   scene.background = sunset;
   return null;
 }
-
-
-
-
- function Box(props) {
-  
-  return (
-    <>
-      <mesh receiveShadow position={[1.702, 1.134, 52.611]} rotation-x={-Math.PI / 2}>
-        <planeGeometry args={[10, 10,10]} />
-        <meshStandardMaterial color={"red"}/>
-      </mesh>
-      {/* <CuboidCollider args={[1, 1, 1]} position={[1.702, 1.134, 52.611]} /> */}
-      </>
-      
-  
-  )
-}
-
 
 export default function App() {
   const modelPath = '/assets/output.glb';
@@ -70,12 +52,13 @@ export default function App() {
       
         <Sky sunPosition={[100, 20, 100]} />
 
-        <Physics  debug="true "  gravity={[0, -10, 0]} >
+        <Physics  debug="true" gravity={[0, -10, 0]} >
           <Ground />
           <GrassBoundary/>
           <Security/>
           <Player />
           <FrontRoads/>
+           <Box/>
           <Roads/>
           {/* <Achivements/> */}
           <Front_tree_one/>
@@ -85,12 +68,15 @@ export default function App() {
           {/* <Pond/> */}
           <TreesBetween2/>
           <Hostel_H/>
+          <Rocks/>
+          <SimpleMountain/>
+          {/* <Clouds/> */}
           <Cubes/>
           {/* <Grass/> */}
           {/* <Model  modelPath={modelPath}  /> */}
           {/* <Models/> */}
           <RigidBody>
-          {/* <Box/> */}
+         
           </RigidBody>
           <Skybox/>
           <Environment preset="sunset" />
