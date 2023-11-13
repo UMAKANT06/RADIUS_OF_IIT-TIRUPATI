@@ -16,7 +16,7 @@ import { FrontRoads } from "./FrontRoads";
 import { Security } from "./Security";
 import { GrassBoundary } from "./GrassBoundary";
 import { Rocks, SimpleMountain, Clouds } from "./Mountains";
-// import { Pond } from "./Pond";
+import { Pond } from "./Pond";
 
 function Skybox() {
   const { scene } = useThree();
@@ -65,7 +65,7 @@ export default function App() {
           <Front_tree_two/>
           <TreesBetween1/>
     
-          {/* <Pond/> */}
+          <Pond/>
           <TreesBetween2/>
           <Hostel_H/>
           <Rocks/>
