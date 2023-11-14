@@ -54,7 +54,7 @@ export function Security(props) {
 
 </group>
 
-<group {...props} dispose={null} position={[50,0,230]} scale={[1,1,1]}>
+<group {...props} dispose={null} position={[50,0,-230]} scale={[1,1,1]}>
 <RigidBody type="fixed">
 <mesh
  castShadow
