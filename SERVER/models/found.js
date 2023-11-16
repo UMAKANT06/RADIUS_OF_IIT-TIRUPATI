@@ -1,11 +1,13 @@
-import { model, Schema,InferSchemaType } from "mongoose";
-export const foundSchema = new Schema({
+const { model, Schema,InferSchemaType } = require("mongoose");
+
+const foundSchema = new Schema({
     finderRollNo: {
         type: String,
         required: true,
         // unique: true,
         minlength: 8,
         maxlength: 8,
+        ref: 'Student', //foreign key
       },
 
       dateAndTime: {
@@ -14,8 +16,8 @@ export const foundSchema = new Schema({
       },
       currentStatus: {
         type: String,
-        enum: foundItemStatuses,
         required: true,
+        default: "Pending",
       },
 
       itemType: {
@@ -44,9 +46,8 @@ export const foundSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        minlength: 8,
-        maxlength: 8,
-        ref: 'userDetails', //foreign key
+        length: 8,
+        ref: 'Student', //foreign key
       },
 
       dateReturned: {
@@ -55,7 +56,7 @@ export const foundSchema = new Schema({
       },
 });
 
-export const finderDetails = model(
-    "finderDetails",
-     foundSchema
-);
+module.exports = model(
+  "FoundItem",
+  foundSchema
+)

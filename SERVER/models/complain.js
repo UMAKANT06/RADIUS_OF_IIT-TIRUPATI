@@ -1,4 +1,5 @@
-import { model, Schema,InferSchemaType } from "mongoose";
+const { model, Schema,InferSchemaType } = require("mongoose");
+
 export const complainSchema = new Schema({
     complainerRollNo: {
         type: String,

@@ -1,4 +1,5 @@
-import { model, Schema,InferSchemaType } from "mongoose";
+const { model, Schema,InferSchemaType } = require("mongoose");
+
 export const hall_fameSchema = new Schema({
     rollNumber: {
         type: String,
