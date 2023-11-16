@@ -2,19 +2,21 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const asyncHandler = require('express-async-handler')
 const User = require('../models/user.js')
+const Student = require('../models/student.js')
+const Admin = require('../models/admin.js')
 
 // @desc    Register new user
 // @route   POST /api/users
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
-    const { name, rollNumber, password, location, phoneNumber, interests, rewards, projects, leaderboardRank, clubs, roomNumber, ratings, appointments } = req.body
-    if (!name || !rollNumber || !password || !location || !phoneNumber || !interests || !rewards || !projects || !leaderboardRank || !clubs || !roomNumber || !ratings || !appointments) {
+    const { id, name, password, userCategory } = req.body
+    if (!name || !id || !password || !userCategory) {
         res.status(400)
         throw new Error('Please fill all the fields')
     }
 
     // Checking if user exists
-    const userExists = await User.findOne({rollNumber})
+    const userExists = await User.findOne({ id })
     if (userExists) {
         res.status(400)
         throw new Error('User already exists')
@@ -26,26 +28,32 @@ const registerUser = asyncHandler(async (req, res) => {
 
     // Create user
     const user = await User.create({
+        id,
         name,
-        rollNumber,
         password: hashedPassword,
-        location,
-        phoneNumber,
-        interests,
-        rewards,
-        projects,
-        leaderboardRank,
-        clubs,
-        roomNumber,
-        ratings,
-        appointments
+        userCategory
     })
+
+    // If user is student then adding student details
+    if (userCategory === 'student') {
+        await Student.create({
+            rollNumber: id,
+            name,
+            password: hashedPassword,
+        })
+    } else {
+        await Admin.create({
+            adminId: id,
+            name,
+            password: hashedPassword,
+        })
+    }
 
     if (user) {
         res.status(201).json({
             _id: user.id,
             name: user.name,
-            rollNumber: user.rollNumber,
+            userCategory: user.userCategory,
             token: generateToken(user._id)
         })
     } else {
@@ -58,14 +66,14 @@ const registerUser = asyncHandler(async (req, res) => {
 // @route   POST /api/users/login
 // @access  Public
 const loginUser = asyncHandler(async (req, res) => {
-    const { rollNumber, password } = req.body
+    const { id, password } = req.body
 
-    const user = await User.findOne({ rollNumber })
+    const user = await User.findOne({ id })
     if (user && (await bcrypt.compare(password, user.password))) {
         res.json({
             _id: user.id,
             name: user.name,
-            rollNumber: user.rollNumber,
+            userCategory: user.userCategory,
             token: generateToken(user._id)
         })
     } else {
@@ -74,17 +82,71 @@ const loginUser = asyncHandler(async (req, res) => {
     }
 })
 
-// @desc    Authenticate a user
+// @desc    Getting all user details
 // @route   POST /api/users/login
-// @access  Private
-const getUserDetails = asyncHandler(async (req, res) => {
-    const { _id, name, rollNumber } = await User.findById(req.user._id)
+// @access  Public
+const getUsers = asyncHandler(async (req, res) => {
+    const users = await User.find({}, {id:1, name:1, userCategory:1, _id:0})
 
-    res.status(200).json({
-        id: _id,
-        name,
-        rollNumber
+    const formattedUsers = users.map(user => {
+        return {
+            ID: user.id,
+            Name: user.name,
+            'Registered as': user.userCategory
+        }
     })
+    res.status(200).json(formattedUsers)
+})
+
+// @desc    Getting all students
+// @route   POST /api/users/login
+// @access  Public
+const getStudents = asyncHandler(async (req, res) => {
+    const users = await User.find({ userCategory: 'student' }, { id: 1, name: 1, userCategory: 1, _id: 0 })
+
+    const formattedStudents = users.map(user => {
+        return {
+            ID: user.id,
+            Name: user.name,
+        }
+    })
+    res.status(200).json(formattedStudents)
+})
+
+// @desc    Getting all students
+// @route   POST /api/users/login
+// @access  Public
+const getAdmins = asyncHandler(async (req, res) => {
+    const users = await User.find({ userCategory: 'admin' }, { id: 1, name: 1, userCategory: 1, _id: 0 })
+
+    const formattedAdmins = users.map(user => {
+        return {
+            ID: user.id,
+            Name: user.name,
+        }
+    })
+    res.status(200).json(formattedAdmins)
+})
+
+// @desc    Delete user
+// @route   DELETE /api/users/:id
+// @access  Private/Admin
+const deleteUser = asyncHandler(async (req, res) => {
+    const user = await User.findOneAndDelete({id: req.params.id})
+    if (user.userCategory === 'student') {
+        await Student.findOneAndDelete({ rollNumber: req.params.id })
+    } else {
+        await Admin.findOneAndDelete({ adminId: req.params.id })
+    }
+
+    if (user) {
+        res.status(200).json({
+            message: `${user.userCategory} ${user.name} deleted successfully`
+        })
+    } else {
+        res.status(404)
+        throw new Error('User not found')
+    }
 })
 
 // Generate JWT
@@ -97,6 +159,8 @@ const generateToken = (id) => {
 module.exports = {
     registerUser,
     loginUser,
-    getUserDetails,
-    getUserProfile,
+    getUsers,
+    getAdmins,
+    getStudents,
+    deleteUser,
 }
