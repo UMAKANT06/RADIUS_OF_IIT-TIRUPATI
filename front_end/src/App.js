@@ -1,9 +1,9 @@
-import { Sky, PointerLockControls, KeyboardControls,Environment } from "@react-three/drei"
+import { Sky, PointerLockControls, KeyboardControls, Environment } from "@react-three/drei"
 import { Physics } from "@react-three/rapier"
 import { Ground } from "./Ground"
 import { CubeTextureLoader } from 'three';
 import { Canvas, useThree } from '@react-three/fiber';
-import { Player ,Box } from "./Player"
+import { Player, Box } from "./Player"
 import { Cubes } from "./Cubes";
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
 import { Hostel_H } from "./Hostel_H";
@@ -16,7 +16,7 @@ import { FrontRoads } from "./FrontRoads";
 import { Security } from "./Security";
 import { GrassBoundary } from "./GrassBoundary";
 import { Rocks, SimpleMountain, Clouds } from "./Mountains";
-// import { Pond } from "./Pond";
+import { Pond } from "./Pond";
 
 function Skybox() {
   const { scene } = useThree();
@@ -46,44 +46,43 @@ export default function App() {
       ]}>
       <Canvas shadowMap >
 
-      <ambientLight intensity={0.5} />
+        <ambientLight intensity={0.5} />
 
 
-      
-        <Sky sunPosition={[100, 20, 100]} />
 
-        <Physics  debug="true" gravity={[0, -10, 0]} >
+
+
+        <Physics gravity={[0, -10, 0]} >
           <Ground />
-          <GrassBoundary/>
-          <Security/>
+          <GrassBoundary />
+          <Security />
           <Player />
-          <FrontRoads/>
-           <Box/>
-          <Roads/>
+          <FrontRoads />
+          <Roads />
           {/* <Achivements/> */}
-          <Front_tree_one/>
-          <Front_tree_two/>
-          <TreesBetween1/>
-    
-          {/* <Pond/> */}
-          <TreesBetween2/>
-          <Hostel_H/>
-          <Rocks/>
-          <SimpleMountain/>
+          <Front_tree_one />
+          <Front_tree_two />
+          <TreesBetween1 />
+
+          <Pond />
+          <TreesBetween2 />
+          <Hostel_H />
+          <Rocks />
+          <SimpleMountain />
           {/* <Clouds/> */}
-          <Cubes/>
+          <Cubes />
           {/* <Grass/> */}
           {/* <Model  modelPath={modelPath}  /> */}
           {/* <Models/> */}
           <RigidBody>
-         
+
           </RigidBody>
-          <Skybox/>
+          <Skybox />
           <Environment preset="sunset" />
         </Physics>
         <PointerLockControls />
       </Canvas>
     </KeyboardControls>
-  
+
   );
 }

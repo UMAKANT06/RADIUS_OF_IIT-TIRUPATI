@@ -31,6 +31,16 @@ export function Roads(props) {
                     />
                 </RigidBody>
             </group>
+            <group {...props} dispose={null} position={[-180, 0, -500]} scale={[1.4, 4, 0.2]} rotation={[0, -Math.PI, 0]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Plane.geometry}
+                        material={materials["Material.001"]}
+                    />
+                </RigidBody>
+            </group>
 
             <group {...props} dispose={null} position={[-94, 0, -100]} scale={[1, 4, 0.2]} rotation={[0, -Math.PI / 2, 0]}>
                 <RigidBody type="fixed">
