@@ -3,9 +3,20 @@ import { Physics } from "@react-three/rapier"
 import { Ground } from "./Ground"
 import { CubeTextureLoader } from 'three';
 import { Canvas, useThree } from '@react-three/fiber';
-import { Player } from "./Player"
-import { Models } from "./Models";
+import { Player ,Box } from "./Player"
+import { Cubes } from "./Cubes";
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
+import { Hostel_H } from "./Hostel_H";
+import { Roads } from "./Roads";
+import { Front_tree_one } from "./Trees_hostel_front1";
+import { Front_tree_two } from "./Trees_hostel_front2";
+import { TreesBetween1 } from "./TreesBetween1";
+import { TreesBetween2 } from "./TreesBetween2";
+import { FrontRoads } from "./FrontRoads";
+import { Security } from "./Security";
+import { GrassBoundary } from "./GrassBoundary";
+import { Rocks, SimpleMountain, Clouds } from "./Mountains";
+// import { Pond } from "./Pond";
 
 function Skybox() {
   const { scene } = useThree();
@@ -22,24 +33,8 @@ function Skybox() {
   return null;
 }
 
-
-
-
- function Box(props) {
-  
-  return (
-    <RigidBody {...props} type="fixed" colliders={false}>
-      <mesh receiveShadow position={[0, 0, 0]} rotation-x={-Math.PI / 2}>
-        <planeGeometry args={[10, 10,10]} />
-        <meshStandardMaterial color={"red"}/>
-      </mesh>
-      <CuboidCollider args={[10, 10, 10]} position={[0, -2, 0]} />
-    </RigidBody>
-  )
-}
-
-
 export default function App() {
+  const modelPath = '/assets/output.glb';
   return (
     <KeyboardControls
       map={[
@@ -49,20 +44,46 @@ export default function App() {
         { name: "right", keys: ["ArrowRight", "d", "D"] },
         { name: "jump", keys: ["Space"] },
       ]}>
-      <Canvas shadows camera={{ fov: 45 }}>
+      <Canvas shadowMap >
+
+      <ambientLight intensity={0.5} />
+
+
+      
         <Sky sunPosition={[100, 20, 100]} />
-        <ambientLight intensity={0.3} />
-        <pointLight castShadow intensity={0.8} position={[100, 100, 100]} />
-        <Physics debug ="true" gravity={[0, -10, 0]}>
+
+        <Physics  debug="true" gravity={[0, -10, 0]} >
           <Ground />
+          <GrassBoundary/>
+          <Security/>
           <Player />
-          <Box/>
+          <FrontRoads/>
+           <Box/>
+          <Roads/>
+          {/* <Achivements/> */}
+          <Front_tree_one/>
+          <Front_tree_two/>
+          <TreesBetween1/>
+    
+          {/* <Pond/> */}
+          <TreesBetween2/>
+          <Hostel_H/>
+          <Rocks/>
+          <SimpleMountain/>
+          {/* <Clouds/> */}
+          <Cubes/>
+          {/* <Grass/> */}
+          {/* <Model  modelPath={modelPath}  /> */}
           {/* <Models/> */}
+          <RigidBody>
+         
+          </RigidBody>
           <Skybox/>
           <Environment preset="sunset" />
         </Physics>
         <PointerLockControls />
       </Canvas>
     </KeyboardControls>
-  )
+  
+  );
 }
