@@ -17,6 +17,7 @@ import { Security } from "./Security";
 import { GrassBoundary } from "./GrassBoundary";
 import { Rocks, SimpleMountain, Clouds } from "./Mountains";
 import { Pond } from "./Pond";
+import { Achivements } from "./Achivements.js";
 
 function Skybox() {
   const { scene } = useThree();
@@ -59,7 +60,7 @@ export default function App() {
           <Player />
           <FrontRoads />
           <Roads />
-          {/* <Achivements/> */}
+          <Achivements/>
           <Front_tree_one />
           <Front_tree_two />
           <TreesBetween1 />
