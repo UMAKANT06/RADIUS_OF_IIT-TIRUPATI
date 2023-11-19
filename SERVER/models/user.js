@@ -1,76 +1,32 @@
-import { model, Schema,InferSchemaType } from "mongoose";
-export const interestsSchema = new Schema({
-  techClubs: {
-    type: [String],
-  },
-  literaryClubs: {
-    type: [String],
-  },
-  sportsClubs: {
-    type: [String],
-  },
-  culturalClubs: {
-    type: [String],
-  },
-});
+const { model, Schema, InferSchemaType } = require("mongoose");
 
 const userSchema = new Schema({
-  rollNumber: {
+  id: {
     type: String,
-    required: true,
+    required: ['true', 'Id is required'],
     unique: true,
-    minlength: 8,
-    maxlength: 8,
+    length: 8,
   },
   name: {
     type: String,
-    required: true,
+    required: ['true', 'Name is required'],
     minlength: 3,
     maxlength: 50,
   },
-  location: {
+  password: {
     type: String,
-    required: true,
-    unique: false,
-    minlength: 2,
-    maxlength: 100,
+    required: ['true', 'Password is required'],
+    minlength: 8,
+    maxlength: 200,
   },
-  phoneNumber: {
-    type: Number,
-    required: true,
-    unique: true,
-  },
-  interest: {
-    type: [interestsSchema],
-    required: true,
-  },
-  rewards: {
+  userCategory: {
     type: String,
-  },
-  projects: {
-    type: [String],
-  },
-  leaderBoardRank: {
-    type: Number,
-  },
-  clubs: {
-    type: [String],
-  },
-  roomNumber: {
-    type: Number,
-    required: true,
-    unique: true,
-  },
-  ratings: {
-    type: String,
-  },
-  appointments: {
-    type: String,
+    enum: ['admin', 'student'],
+    required: ['true', 'Type is required'],
   },
 });
 
-
-export const userDetails = model(
-    "userDetails",
-    userSchema
-);
+module.exports = model(
+  "User",
+  userSchema
+)
