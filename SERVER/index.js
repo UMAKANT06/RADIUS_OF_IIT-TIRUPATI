@@ -30,8 +30,11 @@ app.use(express.urlencoded({ extended: false }))
 
 // Routes
 app.use('/api/users', require('./routes/userRoutes.js'));
-// app.use('/api/students', require('./routes/studentRoutes.js'));
-// app.use('/api/admins', require('./routes/adminRoutes.js'));
+app.use('/api/students', require('./routes/studentRoutes.js'));
+app.use('/api/admins', require('./routes/adminRoutes.js'));
+app.use('/api/complaints', require('./routes/complaintRoutes.js'));
+app.use('/api/lost', require('./routes/lostRoutes.js'));
+app.use('/api/found', require('./routes/foundRoutes.js'));
 
 // Error handling middleware
 app.use(errorHandler)
