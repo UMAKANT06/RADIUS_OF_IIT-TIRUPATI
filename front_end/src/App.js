@@ -1,4 +1,4 @@
-import { Sky, PointerLockControls, KeyboardControls, Environment } from "@react-three/drei"
+import { Sky, PointerLockControls, KeyboardControls, Environment ,Text} from "@react-three/drei"
 import { Physics } from "@react-three/rapier"
 import { Ground } from "./Ground"
 import { CubeTextureLoader } from 'three';
@@ -17,7 +17,7 @@ import { Security } from "./Security";
 import { GrassBoundary } from "./GrassBoundary";
 import { Rocks, SimpleMountain, Clouds } from "./Mountains";
 import { Pond } from "./Pond";
-import { Achivements } from "./Achivements.js";
+import { Achivements } from "./Achivements";
 import React from 'react';
 
 function Skybox() {
@@ -49,11 +49,6 @@ export default function App() {
       <Canvas shadowMap >
 
         <ambientLight intensity={0.5} />
-
-
-
-
-
         <Physics gravity={[0, -10, 0]} >
           <Ground />
           <GrassBoundary />
@@ -81,6 +76,16 @@ export default function App() {
           </RigidBody>
           <Skybox />
           <Environment preset="sunset" />
+          <Text
+            position={[0, 2, 0]} // Adjust the position
+            color="white"          // Text color
+            fontSize={0.5}         // Font size
+            maxWidth={10}           // Max width of the text
+            lineHeight={1}          // Line height
+            letterSpacing={0.02}    // Letter spacing
+          >
+            Hello, 3D World!
+          </Text>
         </Physics>
         <PointerLockControls />
       </Canvas>

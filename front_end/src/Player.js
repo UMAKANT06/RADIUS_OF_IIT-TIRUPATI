@@ -47,9 +47,9 @@ export function Player({ lerp = THREE.MathUtils.lerp }) {
     // ref.current.setLinDamping(0);
 
     const world = rapier.world
-    const ray = world.castRay(new RAPIER.Ray(ref.current.translation(), { x: 0, y: -9, z: 0 }))
+    const ray = world.castRay(new RAPIER.Ray(ref.current.translation(), { x: 0, y: -5, z: 0 }))
     const grounded = ray && ray.collider && Math.abs(ray.toi) <= 1.75
-    if (jump && grounded) ref.current.setLinvel({ x: 0, y: 17.5, z: 0 })
+    if (jump && grounded) ref.current.setLinvel({ x: 0, y: 5.5, z: 0 })
   })
 
 
