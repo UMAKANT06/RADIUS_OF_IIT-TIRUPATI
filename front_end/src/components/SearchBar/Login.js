@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Signup from './Signup';
+import styles from './Login_signup.css';
+// import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
-    const navigate = useNavigate();
+const Login = ({ onSignupClick, onLoginSuccess }) => {
+    // const navigate = useNavigate();
     const [userId, setUserId] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -16,10 +16,11 @@ const Login = () => {
         setPassword(e.target.value);
     };
 
-    const handleSignupClick = async(e) => {
-        try{
-            navigate('/Signup');
-        }catch(error){
+    const handleSignupClick = async (e) => {
+        try {
+            // navigate('/Signup');
+            onSignupClick();
+        } catch (error) {
             console.error('Signup failed. Please check your credentials.');
             setError('Signup failed. Please check your credentials and try again.');
         }
@@ -53,7 +54,8 @@ const Login = () => {
 
                 // Now you can handle the successful login, e.g., redirect to another page
                 console.log('Login successful. Auth Token:', authToken);
-                history.push('./App');
+                // navigate('/App');
+                onLoginSuccess();
             } else {
                 // Handle authentication failure
                 console.error('Login failed. Please check your credentials.');
@@ -67,20 +69,29 @@ const Login = () => {
 
     return (
         <div>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>User ID:</label>
-                    <input type="text" value={userId} onChange={handleUserIdChange} />
+            <div className="Heading">
+                <img src="https://iittp.ac.in/icissconf/images/iit-tirupati_Logo.png" alt="IIT logo" />
+                <h1>RADIUS OF IIT TIRUPATI</h1>
+            </div>
+            <div className="container">
+                <div className="loginBody">
+                    <h2>Login</h2>
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <label>User ID:</label>
+                            <input type="text" value={userId} onChange={handleUserIdChange}  placeholder="8 characters only (e.g. AB01C234)" />
+                        </div>
+                        <div>
+                            <label>Password:</label>
+                            <input type="password" value={password} onChange={handlePasswordChange} />
+                        </div>
+                        {error && <p style={{ color: 'red' }}>{error}</p>}
+                        <button type="submit">Login</button>
+                    </form>
                 </div>
-                <div>
-                    <label>Password:</label>
-                    <input type="password" value={password} onChange={handlePasswordChange} />
-                </div>
-                {error && <p style={{ color: 'red' }}>{error}</p>}
-                <button type="submit">Login</button>
-            </form>
-            <p>Don't have an account? <button onClick={handleSignupClick}>Signup</button></p>
+                <img src="../assets/webpage.png" alt="Webpage image" />
+            </div>
+            <p>Don't have an account? <p onClick={handleSignupClick}>Sign Up</p></p>
         </div>
     );
 };

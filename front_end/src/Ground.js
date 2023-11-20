@@ -1,5 +1,5 @@
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
-
+import React from 'react';
 
 export function Ground(props) {
 
