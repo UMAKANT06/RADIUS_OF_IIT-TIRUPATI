@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-    const navigate = useNavigate();
     const [userId, setUserId] = useState('');
     const [password, setPassword] = useState('');
     const [userName, setUserName] = useState('');
@@ -55,7 +54,6 @@ const Signup = () => {
                 // Assuming the server returns a success message
                 const data = await response.json();
                 console.log('Signup successful:', data.message);
-                navigate('./App');
             } else {
                 // Handle signup failure
                 console.error('Signup failed. Please check your credentials.');

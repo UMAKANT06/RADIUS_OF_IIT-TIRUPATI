@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Signup from './Signup';
+// import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [userId, setUserId] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -18,7 +18,8 @@ const Login = () => {
 
     const handleSignupClick = async(e) => {
         try{
-            navigate('/Signup');
+            window.location.href = './Signup';
+          
         }catch(error){
             console.error('Signup failed. Please check your credentials.');
             setError('Signup failed. Please check your credentials and try again.');
@@ -53,7 +54,7 @@ const Login = () => {
 
                 // Now you can handle the successful login, e.g., redirect to another page
                 console.log('Login successful. Auth Token:', authToken);
-                history.push('./App');
+                // history.push('./App');
             } else {
                 // Handle authentication failure
                 console.error('Login failed. Please check your credentials.');

@@ -4,6 +4,7 @@ import { Footer } from "@pmndrs/branding"
 import "./index.css"
 import App from "./App"
 import Login from "./components/SearchBar/Login"
+import Signup from "./components/SearchBar/Signup"
 
 function Overlay() {
   const [ready, set] = useState(false)
@@ -11,6 +12,7 @@ function Overlay() {
     <>
       {/* <App /> */}
       <Login />
+      {/* <Signup/> */}
       {/* <div className="dot" /> */}
       {/* <div className={`fullscreen bg ${ready ? "ready" : "notready"} ${ready && "clicked"}`}>
         <div className="stack">
