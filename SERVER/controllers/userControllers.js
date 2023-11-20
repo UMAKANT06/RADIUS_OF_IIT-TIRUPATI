@@ -128,27 +128,6 @@ const getAdmins = asyncHandler(async (req, res) => {
     res.status(200).json(formattedAdmins)
 })
 
-// @desc    Delete user
-// @route   DELETE /api/users/:id
-// @access  Private/Admin
-const deleteUser = asyncHandler(async (req, res) => {
-    const user = await User.findOneAndDelete({id: req.params.id})
-    if (user.userCategory === 'student') {
-        await Student.findOneAndDelete({ rollNumber: req.params.id })
-    } else {
-        await Admin.findOneAndDelete({ adminId: req.params.id })
-    }
-
-    if (user) {
-        res.status(200).json({
-            message: `${user.userCategory} ${user.name} deleted successfully`
-        })
-    } else {
-        res.status(404)
-        throw new Error('User not found')
-    }
-})
-
 // Generate JWT
 const generateToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -162,5 +141,4 @@ module.exports = {
     getUsers,
     getAdmins,
     getStudents,
-    deleteUser,
 }

@@ -43,6 +43,6 @@ const lostSchema = new Schema({
 });
 
 module.exports = model(
-  "LostItem",
+  "Lost",
   lostSchema
 )
