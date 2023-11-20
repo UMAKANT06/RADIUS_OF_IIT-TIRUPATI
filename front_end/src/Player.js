@@ -1,6 +1,7 @@
 import * as THREE from "three"
 import * as RAPIER from "@dimforge/rapier3d-compat"
 import { useRef, useEffect } from "react"
+import React from 'react';
 import { useFrame } from "@react-three/fiber"
 import { useKeyboardControls } from "@react-three/drei"
 import { BallCollider, CapsuleCollider, CuboidCollider, RigidBody, useRapier } from "@react-three/rapier"

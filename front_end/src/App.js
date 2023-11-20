@@ -18,6 +18,7 @@ import { GrassBoundary } from "./GrassBoundary";
 import { Rocks, SimpleMountain, Clouds } from "./Mountains";
 import { Pond } from "./Pond";
 import { Achivements } from "./Achivements.js";
+import React from 'react';
 
 function Skybox() {
   const { scene } = useThree();
