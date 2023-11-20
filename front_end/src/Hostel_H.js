@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
 
 export function Hostel_H(props) {
-  const { nodes, materials } = useGLTF("/assets/Hostel_H.glb");
+  const { nodes, materials } = useGLTF("/assets/Hostel__H.glb");
   return (
     <>
       <group {...props} dispose={null} position={[405, 0.1, -471]} scale={[6, 6, 6]} rotation={[0, -Math.PI / 2, 0]}>
