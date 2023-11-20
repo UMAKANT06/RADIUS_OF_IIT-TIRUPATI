@@ -14,7 +14,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/three": "^0.157.2",
     "draco3d": "^1.5.6",
-    "drei": "^2.2.21",
+    "drei": "^1.0.0",
     "express": "^4.18.2",
     "lamina": "^1.1.23",
     "mongodb": "^6.2.0",
@@ -24,7 +24,8 @@
     "perlin.js": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
+    "react-router-dom": "^6.19.0",
+    "react-scripts": "^3.0.1",
     "react-use": "^17.4.0",
     "three": "^0.157.0",
     "web-vitals": "^2.1.4"

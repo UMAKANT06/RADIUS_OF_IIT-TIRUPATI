@@ -1,12 +1,13 @@
-import { model, Schema,InferSchemaType } from "mongoose";
-export const lostSchema = new Schema({
+const { model, Schema,InferSchemaType } = require("mongoose");
+
+const lostSchema = new Schema({
     reporterRollNo: {
         type: String,
         required: true,
         //unique: true,
         minlength: 8,
         maxlength: 8,
-        ref: 'userDetails', //foreign key
+        ref: 'Student', //foreign key
     },
 
     dateAndTime: {
@@ -16,8 +17,8 @@ export const lostSchema = new Schema({
 
     currentStatus: {
         type: String,
-        enum: lostItemStatuses,
         required: true,
+        default: "Pending",
       },
 
     itemType: {
@@ -41,7 +42,7 @@ export const lostSchema = new Schema({
 
 });
 
-export const reporterDetails = model(
-    "reporterDetails",
-     lostSchema
-);
+module.exports = model(
+  "Lost",
+  lostSchema
+)
