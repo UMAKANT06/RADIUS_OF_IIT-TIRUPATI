@@ -43,6 +43,15 @@ export function Player({ lerp = THREE.MathUtils.lerp }) {
     direction.subVectors(frontVector, sideVector).normalize().multiplyScalar(SPEED).applyEuler(state.camera.rotation)
     ref.current.setLinvel({ x: direction.x, y: velocity.y, z: direction.z });
     ref.current.addForce({ x: 0, y: -0.1, z: 0 }, true);
+<<<<<<< HEAD
+=======
+    // ref.current.setLinDamping(0);
+
+    const world = rapier.world
+    const ray = world.castRay(new RAPIER.Ray(ref.current.translation(), { x: 0, y: -9, z: 0 }))
+    const grounded = ray && ray.collider && Math.abs(ray.toi) <= 1.75
+    if (jump && grounded) ref.current.setLinvel({ x: 0, y: 17.5, z: 0 })
+>>>>>>> d13dab2a459b61cdb29f7cbe5d89d431c9f87336
   })
 
 
@@ -50,8 +59,13 @@ export function Player({ lerp = THREE.MathUtils.lerp }) {
 
   return (
     <>
+<<<<<<< HEAD
       <RigidBody ref={ref} colliders={false} mass={1} type="dynamic" position={[0, 10, 0]} enabledRotations={[false, false, false]}>
         <CapsuleCollider args={[1.2, 1.2]} friction={[-0.3]} />
+=======
+      <RigidBody ref={ref} colliders={false} mass={1} type="dynamic" position={[120, 10, 0]} enabledRotations={[false, false, false]}>
+        <CapsuleCollider args={[3.2, 1.2]} friction={[-0.3]} />
+>>>>>>> d13dab2a459b61cdb29f7cbe5d89d431c9f87336
       </RigidBody>
 
     </>

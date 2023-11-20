@@ -16,7 +16,7 @@ export function Achivements(props) {
                 scale={[0.01, 0.01, 0.014]}
             >
                 <group rotation={[Math.PI / 2, 0, 0]}>
-                    {/* <RigidBody type="fixed"> */}
+                    <RigidBody type="fixed">
                     <mesh
                         castShadow
                         receiveShadow
@@ -25,7 +25,7 @@ export function Achivements(props) {
                         rotation={[-Math.PI / 2, 0, 0]}
                         scale={[50, 50, 20]}
                     />
-                    {/* </RigidBody> */}
+                    </RigidBody>
                 </group>
             </group>
             <RigidBody type="fixed">
@@ -1274,6 +1274,7 @@ export function Achivements(props) {
                     scale={[0.01, 0.01, 0.014]}
                 >
                     <group rotation={[Math.PI / 2, 0, 0]}>
+                        <RigidBody type="fixed">
                         <mesh
                             castShadow
                             receiveShadow
@@ -1282,8 +1283,10 @@ export function Achivements(props) {
                             rotation={[-Math.PI / 2, 0, 0]}
                             scale={[50, 50, 20]}
                         />
+                        </RigidBody>
                     </group>
                 </group>
+                <RigidBody type="fixed">
                 <mesh
                     castShadow
                     receiveShadow
@@ -1293,8 +1296,8 @@ export function Achivements(props) {
                     rotation={[-Math.PI, 0, 0]}
                     scale={[-12.5, -1, -2]}
                 />
-            {/* </RigidBody> */}
-            {/* <RigidBody type="fixed"> */}
+                </RigidBody>
+            <RigidBody type="fixed">
                 <mesh
                     castShadow
                     receiveShadow
@@ -1304,8 +1307,8 @@ export function Achivements(props) {
                     rotation={[-Math.PI, 0, 0]}
                     scale={[-12.5, -1, -2]}
                 />
-            {/* </RigidBody> */}
-            {/* <RigidBody type="fixed"> */}
+            </RigidBody>
+            <RigidBody type="fixed">
                 <mesh
                     castShadow
                     receiveShadow
@@ -1314,8 +1317,8 @@ export function Achivements(props) {
                     position={[14, 0, 0]}
                     scale={[1.5, 1, 16.5]}
                 />
-            {/* </RigidBody> */}
-            {/* <RigidBody type="fixed"> */}
+            </RigidBody>
+            <RigidBody type="fixed">
                 <mesh
                     castShadow
                     receiveShadow
@@ -1325,7 +1328,7 @@ export function Achivements(props) {
                     rotation={[-Math.PI, 0, 0]}
                     scale={[-12.5, -1, -2]}
                 />
-            {/* </RigidBody> */}
+            </RigidBody>
             <group position={[0, 5.409, -16.489]} scale={[0.4, 0.2, 0.4]}>
                 <mesh
                     castShadow
