@@ -11,6 +11,7 @@ import { Vector3, Quaternion, Euler ,MathUtils} from 'three';
 import { Animate } from "./components/cammeraControls";
 import { Experince } from "./components/experince";
 import {RigidBody} from '@react-three/rapier'
+import Search from "./components/SearchBar/SearchScreen";
 function Skybox() {
   const { scene } = useThree();
   const loader = new CubeTextureLoader();
@@ -62,6 +63,7 @@ function App() {
     <Canvas
       style={{ position: 'fixed', top: 0, right: 0, bottom: 0, left: 0 }}
     >
+      {/* <Search/> */}
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 0, 10]} />
 

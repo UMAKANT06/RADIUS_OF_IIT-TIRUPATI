@@ -3,8 +3,10 @@ dotenv.config();
 const express = require("express");
 const mongoose = require("mongoose");
 const { MONGO_URL } = require("./utils/getEnv");
+var routes = require('./routes/routes')
 const {PORT}=require("./utils/getEnv");
 const app = express();
+const cors = require('cors');
 
 // Mongoose setup
 mongoose.connection.on("connecting", () => {
@@ -23,6 +25,8 @@ mongoose.connection.on("error",(error) => {
   console.log(error);
 });
 
+app.use(routes);
+app.use('*', cors());
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {

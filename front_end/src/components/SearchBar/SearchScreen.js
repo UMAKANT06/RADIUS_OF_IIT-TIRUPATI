@@ -1,12 +1,19 @@
 import React from "react";
 import "./SearchScreen.css";
-const Search = () => {
+function Search() {
   return (
     <div className="mainscreen">
       <div className="mainblock">
-        <input type="text" placeholder="Search..." />
+        <form>
+          <div>
+            <div>
+              <label> Student Name </label>
+              <input type="text" id="name"/>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   );
-};
+}
 export default Search;
