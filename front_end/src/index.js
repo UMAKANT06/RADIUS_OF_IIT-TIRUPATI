@@ -3,19 +3,21 @@ import { createRoot } from "react-dom/client"
 import { Footer } from "@pmndrs/branding"
 import "./index.css"
 import App from "./App"
+import Login from "./components/SearchBar/Login"
 
 function Overlay() {
   const [ready, set] = useState(false)
   return (
     <>
-      <App />
+      {/* <App /> */}
+      <Login />
       {/* <div className="dot" /> */}
-      <div className={`fullscreen bg ${ready ? "ready" : "notready"} ${ready && "clicked"}`}>
+      {/* <div className={`fullscreen bg ${ready ? "ready" : "notready"} ${ready && "clicked"}`}>
         <div className="stack">
           <button onClick={() => set(true)}>Start</button>
-        </div>
+        </div> */}
         {/* <Footer date="16. June" year="2021" /> */}
-      </div>
+      {/* </div> */}
     </>
   )
 }

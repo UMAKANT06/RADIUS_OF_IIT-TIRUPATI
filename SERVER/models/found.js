@@ -57,6 +57,6 @@ const foundSchema = new Schema({
 });
 
 module.exports = model(
-  "FoundItem",
+  "Found",
   foundSchema
 )
