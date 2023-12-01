@@ -43,6 +43,13 @@ export function Player({ lerp = THREE.MathUtils.lerp }) {
     direction.subVectors(frontVector, sideVector).normalize().multiplyScalar(SPEED).applyEuler(state.camera.rotation)
     ref.current.setLinvel({ x: direction.x, y: velocity.y, z: direction.z });
     ref.current.addForce({ x: 0, y: -0.1, z: 0 }, true);
+
+
+    //jump code
+    const world = rapier.world
+    const ray = world.castRay(new RAPIER.Ray(ref.current.translation(), { x: 0, y: -5, z: 0 }))
+    const grounded = ray && ray.collider && Math.abs(ray.toi) <= 1.75
+    if (jump && grounded) ref.current.setLinvel({ x: 0, y: 5.5, z: 0 })
   })
 
 
