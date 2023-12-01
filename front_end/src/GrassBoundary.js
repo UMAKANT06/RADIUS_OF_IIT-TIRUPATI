@@ -1913,6 +1913,406 @@ export function GrassBoundary(props) {
                     />
                 </RigidBody>
             </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={[0.84, 0.6, 0.6]} position={[152, -1.5, -310]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={[0.84, 0.6, 0.6]} position={[152, -1.5, -250]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={[0.84, 0.6, 0.6]} position={[152, -1.5, -189]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={[0.84, 0.6, 0.6]} position={[152, -1.5, -126]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
             <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={[0.84, 0.6, 0.6]} position={[109, -1.5, -125]}>
                 <RigidBody type="fixed">
                     <mesh
@@ -2013,6 +2413,707 @@ export function GrassBoundary(props) {
                     />
                 </RigidBody>
             </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={[0.84, 0.6, 0.6]} position={[109, -1.5, -324]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={[0.84, 0.6, 0.6]} position={[109, -1.5, -384]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={[0.84, 0.6, 0.6]} position={[109, -1.5, -447]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={[0.84, 0.6, 0.6]} position={[109, -1.5, -506]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={[0.84, 0.6, 0.6]} position={[109, -1.5, -568]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={[0.84, 0.6, 0.6]} position={[109, -1.5, -628]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={[0.84, 0.6, 0.6]} position={[109, -1.5, -689]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            
 
 
             <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, 0]} scale={[1, 0.6, 0.6]} position={[-32, -1.5, 79]}>
@@ -3016,6 +4117,706 @@ export function GrassBoundary(props) {
                 </RigidBody>
             </group>
             <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, 0]} scale={[1, 0.6, 0.6]} position={[-32, -1.5, -279]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, 0]} scale={[1, 0.6, 0.6]} position={[-32, -1.5, -321]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, 0]} scale={[1, 0.6, 0.6]} position={[-106, -1.5, -321]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, 0]} scale={[1, 0.6, 0.6]} position={[-150, -1.5, -321]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, 0]} scale={[1, 0.6, 0.6]} position={[40, -1.5, -321]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, 0]} scale={[1, 0.6, 0.6]} position={[295, -1.5, -367]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, 0]} scale={[1, 0.6, 0.6]} position={[157, -1.5, -367]}>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3.geometry}
+                        material={materials.Part11Mtl}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3001.geometry}
+                        material={materials["Part11Mtl.001"]}
+                        position={[7.28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3002.geometry}
+                        material={materials["Part11Mtl.002"]}
+                        position={[14.418, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3003.geometry}
+                        material={materials["Part11Mtl.003"]}
+                        position={[21.179, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3004.geometry}
+                        material={materials["Part11Mtl.004"]}
+                        position={[28, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3005.geometry}
+                        material={materials["Part11Mtl.005"]}
+                        position={[34.562, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3006.geometry}
+                        material={materials["Part11Mtl.006"]}
+                        position={[41.057, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3007.geometry}
+                        material={materials["Part11Mtl.007"]}
+                        position={[47.993, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3008.geometry}
+                        material={materials["Part11Mtl.008"]}
+                        position={[54.185, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3009.geometry}
+                        material={materials["Part11Mtl.009"]}
+                        position={[60.718, 0, 0]}
+                    />
+                </RigidBody>
+                <RigidBody type="fixed">
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.Object_3010.geometry}
+                        material={materials["Part11Mtl.010"]}
+                        position={[66.648, 0, 0]}
+                    />
+                </RigidBody>
+            </group>
+            <group {...props} dispose={null} rotation={[-Math.PI / 2, 0, 0]} scale={[1, 0.6, 0.6]} position={[224, -1.5, -367]}>
                 <RigidBody type="fixed">
                     <mesh
                         castShadow

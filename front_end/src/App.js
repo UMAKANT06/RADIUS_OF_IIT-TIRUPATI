@@ -60,7 +60,7 @@ export default function App() {
           <Player />
           <FrontRoads />
           <Roads />
-          <Achivements/>
+          {/* <Achivements/> */}
           <Front_tree_one />
           <Front_tree_two />
           <TreesBetween1 />
