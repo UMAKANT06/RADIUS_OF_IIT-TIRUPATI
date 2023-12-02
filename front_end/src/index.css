@@ -19,6 +19,20 @@ body,
   overflow: hidden;
 }
 
+#root::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5;
+  width: 10%;
+  height: 10%;
+  background-image: url("logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none;
+}
+
 body {
   position: fixed;
   overflow: hidden;

@@ -57,8 +57,8 @@ export function Player({ lerp = THREE.MathUtils.lerp }) {
 
   return (
     <>
-      <RigidBody ref={ref} colliders={false} mass={1} type="dynamic" position={[0, 10, 0]} enabledRotations={[false, false, false]}>
-        <CapsuleCollider args={[1.2, 1.2]} friction={[-0.3]} />
+      <RigidBody ref={ref} colliders={false} mass={1} type="dynamic" position={[130, 10, 450]} enabledRotations={[false, false, false]}>
+        <CapsuleCollider args={[2.2, 3.2]} friction={[-0.3]} />
       </RigidBody>
 
     </>
