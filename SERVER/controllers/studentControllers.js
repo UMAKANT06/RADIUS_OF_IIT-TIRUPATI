@@ -8,13 +8,37 @@ const User = require('../models/user.js')
 // @route   PUT /api/students
 // @access  Private
 const updateDetails = asyncHandler(async (req, res) => {
-    const { id: studentID } = req.params;
-    const updatedDetails = req.body;
+    const { id } = req.params;
+    const { name, password, location, phoneNumber, rewards, projects, leaderBoardRank, clubs, roomNumber, ratings, appointments, techClubs, literaryClubs, sportsClubs, culturalClubs } = req.body;
 
-    const updatedStudent = await Student.findOneAndUpdate({ rollNumber: studentID }, updatedDetails, {
+    const student = await Student.findOne({ rollNumber: id });
+
+    if (!student) {
+        res.status(404);
+        throw new Error('Student not found');
+    }
+
+    const updatedStudent = await Student.findOneAndUpdate({ rollNumber: id }, {
+        name,
+        password,
+        location,
+        phoneNumber,
+        techClubs,
+        literaryClubs,
+        sportsClubs,
+        culturalClubs,
+        rewards,
+        projects,
+        leaderBoardRank,
+        clubs,
+        roomNumber,
+        ratings,
+        appointments,
+    }, {
         new: true,
         runValidators: true,
     });
+    
 
     if (updatedStudent) {
         res.status(200).json(updatedStudent);

@@ -6,8 +6,8 @@ const Lost = require('../models/lost.js');
 // @route   POST /api/lost/addLost
 // @access  Public
 const registerLost = asyncHandler(async (req, res) => {
-    const { reporterRollNo, dateAndTime, itemType, itemDescription, attachments, location } = req.body;
-    if (!reporterRollNo || !itemType || !itemDescription || !location || !dateAndTime) {
+    const { reporterRollNo, itemType, itemDescription, attachments, location } = req.body;
+    if (!reporterRollNo || !itemType || !itemDescription) {
         res.status(400);
         throw new Error('Please fill all the fields');
     }
@@ -22,8 +22,6 @@ const registerLost = asyncHandler(async (req, res) => {
     // Create lost
     const lost = await Lost.create({
         reporterRollNo,
-        dateAndTime: dateAndTime,
-        currrentStatus: "Pending",
         itemType,
         itemDescription,
         attachments,
@@ -163,6 +161,7 @@ const updateLost = asyncHandler(async (req, res) => {
         date: updatedlost.dateAndTime,
         itemType: updatedlost.itemType,
         itemDescription: updatedlost.itemDescription,
+        status,
         attachments: updatedlost.attachments,
         location: updatedlost.location,
     });
@@ -179,14 +178,20 @@ const deleteLost = asyncHandler(async (req, res) => {
     }
 
     // Checking if the complain exists or not
-    const lost = await Lost.findById(lostId);
+    let lost;
+    try {
+        lost = await Lost.findById(lostId);
+    } catch (error) {
+        res.status(400);
+        throw new Error(`Lost item with the id = ${lostId} does not exist`);
+    }
     if (!lost) {
         res.status(400);
         throw new Error(`Lost item with the id = ${lostId} does not exist`);
     }
 
     // Delete lost
-    const deletedLost = await lost.remove();
+    const deletedLost = await Lost.findOneAndDelete({ _id: lostId });
     if (!deletedLost) {
         res.status(400);
         throw new Error('Lost item could not be deleted');

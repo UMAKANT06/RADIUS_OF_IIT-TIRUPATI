@@ -6,8 +6,8 @@ const Student = require('../models/student.js');
 // @route   POST /api/found/addFound
 // @access  Public
 const registerFound = asyncHandler(async (req, res) => {
-    const { finderRollNo, dateAndTime, itemType, itemDescription, attachments, location } = req.body;
-    if (!finderRollNo || !itemType || !itemDescription || !location || !dateAndTime) {
+    const { finderRollNo, itemType, itemDescription, attachments, location } = req.body;
+    if (!finderRollNo || !itemType || !itemDescription || !location) {
         res.status(400);
         throw new Error('Please fill all the fields');
     }
@@ -21,15 +21,11 @@ const registerFound = asyncHandler(async (req, res) => {
 
     // Create Found
     const found = await Found.create({
-        reporterRollNo,
-        dateAndTime: dateAndTime,
-        currrentStatus: "Pending",
+        finderRollNo,
         itemType,
         itemDescription,
         attachments,
-        location,
-        claimedByRollNo: "NA",
-        dateReturned: "NA",
+        location
     });
 
     if (found) {
@@ -64,8 +60,8 @@ const showAllFound = asyncHandler(async (req, res) => {
             itemDescription: found.itemDescription,
             attachments: found.attachments,
             location: found.location,
-            claimedByRollNo: claimedByRollNo,
-            dateReturned: dateReturned,
+            claimedByRollNo: found.claimedByRollNo,
+            dateReturned: found.dateReturned,
         };
     });
 
@@ -76,7 +72,7 @@ const showAllFound = asyncHandler(async (req, res) => {
 // @route   GET /api/found/showFound
 // @access  Public
 const showFound = asyncHandler(async (req, res) => {
-    const { reporterRollNo } = req.body;
+    const { finderRollNo } = req.body;
     if (!finderRollNo) {
         res.status(400);
         throw new Error('Please fill all the fields');
@@ -149,7 +145,7 @@ const showOneFound = asyncHandler(async (req, res) => {
 // @access  Public
 const updateFound = asyncHandler(async (req, res) => {
     const { foundId, claimedByRollNo, dateReturned, status } = req.body;
-    if (!foundId || !claimedByRollNo || !dateReturned || !status) {
+    if (!foundId || !claimedByRollNo || !status) {
         res.status(400);
         throw new Error('Please fill all the fields');
     }
@@ -164,7 +160,7 @@ const updateFound = asyncHandler(async (req, res) => {
     // Update found
     found.currentStatus = status;
     found.claimedByRollNo = claimedByRollNo;
-    found.dateReturned = dateReturned;
+    found.dateReturned = Date.now();
     const updatedfound = await found.save();
 
     res.status(200).json({
@@ -191,15 +187,22 @@ const deleteFound = asyncHandler(async (req, res) => {
         throw new Error('Please fill all the fields');
     }
 
-    // Checking if the complain exists or not
-    const found = await Found.findById(foundId);
+    // Checking if the found exists or not
+    let found;
+    try {
+        found = await Found.findById(foundId);
+    } catch (error) {
+        res.status(400);
+        throw new Error(`Found item with the id = ${foundId} does not exist`);
+    }
+
     if (!found) {
         res.status(400);
         throw new Error(`Found item with the id = ${foundId} does not exist`);
     }
 
     // Delete lost
-    const deletedFound = await found.remove();
+    const deletedFound = await Found.findOneAndDelete({ _id: foundId })
     if (!deletedFound) {
         res.status(400);
         throw new Error('Found item could not be deleted');

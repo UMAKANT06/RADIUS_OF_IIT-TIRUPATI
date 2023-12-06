@@ -1,20 +1,5 @@
 const { model, Schema,InferSchemaType } = require("mongoose");
 
-const interestsSchema = new Schema({
-  techClubs: {
-    type: [String],
-  },
-  literaryClubs: {
-    type: [String],
-  },
-  sportsClubs: {
-    type: [String],
-  },
-  culturalClubs: {
-    type: [String],
-  },
-});
-
 const studentSchema = new Schema({
   rollNumber: {
     type: String,
@@ -46,9 +31,17 @@ const studentSchema = new Schema({
     required: false,
     unique: false,
   },
-  interest: {
-    type: [interestsSchema],
-    unique: false,
+  techClubs: {
+    type: [String],
+  },
+  literaryClubs: {
+    type: [String],
+  },
+  sportsClubs: {
+    type: [String],
+  },
+  culturalClubs: {
+    type: [String],
   },
   rewards: {
     type: String,
@@ -81,7 +74,4 @@ const studentSchema = new Schema({
 });
 
 
-module.exports = model(
-    'Student',
-    studentSchema
-);
+module.exports = model("Student", studentSchema);

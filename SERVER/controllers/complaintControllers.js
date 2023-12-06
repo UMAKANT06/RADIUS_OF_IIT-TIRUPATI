@@ -7,8 +7,8 @@ const Complain = require('../models/complain.js');
 // @route   POST /api/complaints/addComplaint
 // @access  Public
 const registerComplaint = asyncHandler(async (req, res) => {
-    const { complainerRollNo, date, complainType, complaint, attachments, hostelOrPlace } = req.body;
-    if (!complainerRollNo || !complainType || !complaint || !hostelOrPlace || !date) {
+    const { complainerRollNo, complainType, complaint, attachments, hostelOrPlace } = req.body;
+    if (!complainerRollNo || !complainType || !complaint || !hostelOrPlace) {
         res.status(400);
         throw new Error('Please fill all the fields');
     }
@@ -23,7 +23,6 @@ const registerComplaint = asyncHandler(async (req, res) => {
     // Create complaint
     const complain = await Complain.create({
         complainerRollNo,
-        date: date,
         currrentStatusCompalin: "Pending",
         complainType,
         complaint,
@@ -80,8 +79,8 @@ const showComplaint = asyncHandler(async (req, res) => {
     res.status(200).json(formattedComplaints);
 });
 
-// @desc    Show complaint status
-// @route   GET /api/complaints/showComplaint
+// @desc    Show one complaint status
+// @route   GET /api/complaints/showOneComplaint
 // @access  Public
 const showOneComplaint = asyncHandler(async (req, res) => {
     const { complainerRollNo, complaintId } = req.body;
@@ -120,15 +119,22 @@ const deleteComplaint = asyncHandler(async (req, res) => {
         throw new Error('Student does not exist');
     }
 
-    // Find all complaints of the given student
-    const complaint = await Complain.findOne({ complainerRollNo, _id: complaintId });
+    // Checking if complaint exist
+    let complaint;
+    try {
+        complaint = await Complain.findOne({ complainerRollNo, _id: complaintId });
+    } catch (error) {
+        res.status(400);
+        throw new Error('Complaint does not exist');
+    }
 
     if (!complaint) {
         res.status(400);
         throw new Error('Complaint does not exist');
     }
 
-    const deletedComplaint = await complaint.remove();
+    // Delete complaint
+    const deletedComplaint = await Complain.findOneAndDelete({ complainerRollNo, _id: complaintId });
     if (!deletedComplaint) {
         res.status(400);
         throw new Error('Complaint could not be deleted');
@@ -174,6 +180,7 @@ const updateComplaint = asyncHandler(async (req, res) => {
         complaint: updatedComplaint.complaint,
         attachments: updatedComplaint.attachments,
         hostelOrPlace: updatedComplaint.hostelOrPlace,
+        status
     });
 });
 

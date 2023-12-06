@@ -25,7 +25,7 @@ import Signup from "./components/SearchBar/Signup"
 // }
 
 function Overlay() {
-  const [currentPage, setCurrentPage] = useState('login');
+  const [currentPage, setCurrentPage] = useState('app');
 
   const handlePageChange = (page) => {
     setCurrentPage(page);

@@ -7,16 +7,16 @@ const complainSchema = new Schema({
         // unique: true,
         minlength: 8,
         maxlength: 8,
-        ref: 'userDetails', //foreign key
+        // ref: 'userDetails', //foreign key
     },
     date: {
       type: Date,
-      default: Date.now,
+      default: Date.now(),
     },
     currentStatusComplain: {
       type: String,
       required: true,
-      default: false,
+      default: "Pending",
     },
     complainType: {
       type: String,
@@ -38,7 +38,7 @@ const complainSchema = new Schema({
     },
 });
 
-module.exports = (
+module.exports = model(
     "Complain",
      complainSchema
 );

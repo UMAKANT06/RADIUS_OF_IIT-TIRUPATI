@@ -1,6 +1,6 @@
 const { model, Schema,InferSchemaType } = require("mongoose");
 
-export const hall_fameSchema = new Schema({
+const hall_fameSchema = new Schema({
     rollNumber: {
         type: String,
         required: true,
@@ -9,7 +9,7 @@ export const hall_fameSchema = new Schema({
         maxlength: 8,
 
         ref: 'userDetails', //foreign key
-      },
+    },
 
     //   dateAndTime: {
     //     type: Date,
@@ -37,7 +37,7 @@ export const hall_fameSchema = new Schema({
       
 });
 
-export const hall_fameDetails = model(
-    "hall_fameDetails",
+module.exports = model(
+    "hallOfFame",
     hall_fameSchema
 );

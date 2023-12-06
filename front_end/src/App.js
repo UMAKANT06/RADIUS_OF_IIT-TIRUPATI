@@ -18,7 +18,8 @@ import { GrassBoundary } from "./GrassBoundary";
 import { Rocks, SimpleMountain, Clouds } from "./Mountains";
 import { Pond } from "./Pond";
 import { Achivements } from "./Achivements.js";
-import React from 'react';
+import React, { useState } from 'react';
+import ComplainForm from "./components/SearchBar/complainForm.js";
 
 function Skybox() {
   const { scene } = useThree();
@@ -37,6 +38,7 @@ function Skybox() {
 
 export default function App() {
   const modelPath = '/assets/output.glb';
+  const [showForm, setShowForm] = useState(false);
   return (
     <KeyboardControls
       map={[
@@ -51,13 +53,11 @@ export default function App() {
         <ambientLight intensity={0.5} />
 
 
-
-
-
-        <Physics gravity={[0, -10, 0]} >
+        <Physics gravity={[0, -10, 0]} debug >
           <Ground />
           <GrassBoundary />
-          <Security />
+          <Security/>
+
           <Player />
           <FrontRoads />
           <Roads />

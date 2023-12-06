@@ -8,6 +8,6 @@ router.post('/login', loginUser)
 router.get('/getUser', getUsers)
 router.get('/getStudent', getStudents)
 router.get('/getAdmin', getAdmins)
-router.post('/logout', logoutUser)
+router.post('/logout', protect, logoutUser)
 
 module.exports = router
